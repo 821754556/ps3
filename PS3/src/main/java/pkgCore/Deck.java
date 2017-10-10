@@ -22,7 +22,7 @@ public class Deck {
 		Collections.shuffle(cardsInDeck);
 	}
 
-	// throws an exception if the deck is empty
+	 
 	public Card Draw() throws DeckException {
 		if (this.cardsInDeck.size() == 0) {
 			throw new DeckException(this);
@@ -30,8 +30,8 @@ public class Deck {
 		return cardsInDeck.remove(0);
 	}
 
-	// Draw a card of a given eSuit
-	public Card DrawSuit(eSuit eSuit) {
+	 
+	public Card Draw(eSuit eSuit) {
 		for (Card c : this.cardsInDeck) {
 			if (c.geteSuit() == eSuit) {
 				cardsInDeck.remove(c);
@@ -41,8 +41,8 @@ public class Deck {
 		return null;
 	}
 
-	// to Draw a card of a given eRank
-	public Card DrawRank(eRank eRank) {
+	 
+	public Card Draw(eRank eRank) {
 		for (Card c : this.cardsInDeck) {
 			if (c.geteRank() == eRank) {
 				cardsInDeck.remove(c);
@@ -52,7 +52,7 @@ public class Deck {
 		return null;
 	}
 
-	// return the number of a given eSuit left in the deck.
+	 
 	public int countSuit(eSuit eSuit) {
 		ArrayList<Card> eSuitLeft = cardsInDeck.stream().filter(c -> c.geteSuit() == eSuit)
 				.collect(Collectors.toCollection(ArrayList::new));
@@ -60,7 +60,7 @@ public class Deck {
 		return eSuitLeft.size();
 	}
 
-	// return the number of a given eRank left in the deck.
+	 
 	public int countRank(eRank eRank) {
 		ArrayList<Card> eRankLeft = cardsInDeck.stream().filter(c -> c.geteRank() == eRank)
 				.collect(Collectors.toCollection(ArrayList::new));
@@ -68,10 +68,10 @@ public class Deck {
 		return eRankLeft.size();
 	}
 
-	// return 0 or 1 if a given card is left in the deck.
+	 
 	public int FindCard(Card c) {
-		for (Card crds : cardsInDeck) {
-			if (crds == c)
+		for (Card i : cardsInDeck) {
+			if (i == c)
 				return 1;
 		}
 		return 0;
