@@ -39,7 +39,7 @@ public class DeckTest {
 	public void TestDeckRankCount() {
 		 
 		Deck iDeck = new Deck();
-		assertEquals(iDeck.countrank(pkgEnum.eRank.TWO), 4);
+		assertEquals(iDeck.countRank(pkgEnum.eRank.TWO), 4);
 	}
 
 	@Test
